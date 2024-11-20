@@ -4,7 +4,11 @@ function toggleText() {
 
     if (btnName.classList.contains('toggle-text-button')) {
       let textElement = document.getElementById('text');
-      textElement.hidden = !textElement.hidden;
+      if (textElement.hasAttribute('hidden')) {
+        textElement.removeAttribute('hidden');
+      } else {
+        textElement.setAttribute('hidden', '');
+      }
     }
   });
 }
